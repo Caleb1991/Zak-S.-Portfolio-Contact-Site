@@ -21,6 +21,10 @@
    box-sizing: border-box;
  }
 
+ body {
+  background: black;
+ }
+
  .nav-bar {
   position: fixed;
    padding: 15px 30px;
@@ -28,12 +32,13 @@
    background: teal;
    border: none;
    border-radius: 7px;
-   width: 98%;
+   width: 98.75%;
  }
 
  .nav-bar a {
    text-decoration: none;
    color: antiquewhite;
+   font-size: 20px;
    padding: 15px 100px;
  }
 
