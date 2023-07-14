@@ -21,18 +21,14 @@
    box-sizing: border-box;
  }
 
- .nav-bar-parent {
-  position: fixed;
-  margin: 3px 10px 3px 10px;
-  width: 100%;
- }
-
  .nav-bar {
+  position: fixed;
    padding: 15px 30px;
    margin: 10px;
    background: teal;
    border: none;
    border-radius: 7px;
+   width: 98%;
  }
 
  .nav-bar a {
