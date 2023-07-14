@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+
+ .nav-bar-parent {
+  position: fixed;
+  margin: 3px 10px 3px 10px;
+  width: 100%;
+ }
+
+ .nav-bar {
+   padding: 15px 30px;
+   margin: 10px;
+   background: teal;
+   border: none;
+   border-radius: 7px;
+ }
+
+ .nav-bar a {
+   text-decoration: none;
+   color: antiquewhite;
+   padding: 15px 100px;
+ }
+
+ .nav-bar a:hover {
+  text-decoration: underline;
+  color: purple;
+  background: black;
+  border-radius: 7px;
+ }
+
+ .nav-bar .socials {
+  display: grid;
+  grid-template-columns: 40px 40px;
+  grid-template-rows: 15px 15px;
+  padding: 5px;
+  margin: 10px;
+ }
