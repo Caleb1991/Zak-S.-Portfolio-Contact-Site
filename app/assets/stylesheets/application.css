@@ -26,7 +26,8 @@
  }
 
  .nav-bar {
-  position: fixed;
+   display: block;
+   position: fixed;
    padding: 15px 30px;
    margin: 10px;
    background: teal;
@@ -37,15 +38,15 @@
 
  .nav-bar a {
    text-decoration: none;
-   color: antiquewhite;
+   color: #fffdd0;
    font-size: 20px;
    padding: 15px 100px;
  }
 
  .nav-bar a:hover {
   text-decoration: underline;
-  color: purple;
-  background: black;
+  color: black;
+  background: #fffdd0;
   border-radius: 7px;
  }
 
