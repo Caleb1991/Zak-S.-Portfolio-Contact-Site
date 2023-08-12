@@ -1,13 +1,16 @@
 = stylesheet_link_tag "login_styling"
 
-h1 Welcome to your login destination!
-= form_with url: '/login', method: 'post' do |f|
-  = f.label :username
-  = f.text_field :username
-  = f.label :password
-  = f.password_field :password
-  = f.submit :Submit
-h3 
-  | If you're a guest, you might be in the wrong place,  
-  a href='/' click here
-  |  to return.
+- if @current_user
+  = button_to 'Log Out', '/login', method: :delete
+- else
+  h1 Welcome to your login destination!
+  = form_with url: '/login', method: 'post', local: true do |f|
+    = f.label :username
+    = f.text_field :username
+    = f.label :password
+    = f.password_field :password
+    = f.submit :Submit
+  h3 
+    | If you're a guest, you might be in the wrong place,  
+    a href='/' click here
+    |  to return.
