@@ -1,11 +1,12 @@
-class Artist < ApplicationRecord
+class Assistant < ApplicationRecord
   has_secure_password
   validates :username, :email, presence: true, uniqueness: true
   validates :password, :password_confirmation, :email_confirmation, presence: true
   before_validation :verify_email_matches_confirm
   before_save :normalize_email
 
-  has_many :assistants
+  belongs_to :artist
+  
 
   def verify_email_matches_confirm
     if email && email_confirmation && email.downcase == email_confirmation.downcase

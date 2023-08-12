@@ -10,32 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_10_031803) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_12_185844) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "admins", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "username"
-    t.string "password"
-    t.string "password_confirm"
-    t.string "password_hint"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "artists", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
+    t.string "email_confirmation"
+    t.string "username"
     t.string "phone_number"
-    t.string "instagram"
-    t.string "tik_tok"
-    t.string "facebook"
+    t.string "instagram_url"
+    t.string "tik_tok_url"
+    t.string "facebook_url"
+    t.string "personal_shop_url"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "assistants", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "email_confirmation"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "artist_id", null: false
+    t.index ["artist_id"], name: "index_assistants_on_artist_id"
+  end
+
+  add_foreign_key "assistants", "artists"
 end
