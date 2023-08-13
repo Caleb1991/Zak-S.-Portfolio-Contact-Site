@@ -1,10 +1,10 @@
-= stylesheet_link_tag "login_styling"
+= stylesheet_link_tag "sessions_styling"
 
 - if @current_user
-  = button_to 'Log Out', '/login', method: :delete
+  = button_to 'Log Out', '/sessions', method: :delete
 - else
   h1 Welcome to your login destination!
-  = form_with url: '/login', method: 'post', local: true do |f|
+  = form_with url: '/sessions', method: 'post', local: true do |f|
     = f.label :username
     = f.text_field :username
     = f.label :password

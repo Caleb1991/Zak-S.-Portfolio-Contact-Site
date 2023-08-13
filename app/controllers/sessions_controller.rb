@@ -1,4 +1,4 @@
-class LoginController < ApplicationController
+class SessionsController < ApplicationController
   def index
   end
 
@@ -7,12 +7,14 @@ class LoginController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       session[:user_type] = user.class
-      redirect_to root_path
+      redirect_to root_path, notice: "Welcome Back #{user.username}"
+    else
+      redirect_to sessions_path, alert: 'Your username or password are incorrect.'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path
+    redirect_to sessions_path
   end
 end

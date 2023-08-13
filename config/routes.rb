@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
-  resources :login, only: [:index, :create]
-  delete '/login', to: 'login#destroy'
+  resources :sessions, only: [:index, :create]
+  delete '/sessions', to: 'sessions#destroy'
 end
